@@ -121,7 +121,8 @@ python Imagenet_main.py\
 		 --gpu=0 \
 		 --sample_mode random_shuffling \
 		 --world-size 1 \
-		 --rank 0 $data_path \
+		 --rank 0 \
+		 $data_path \
 		 --workers 10 \
 		 --wandb_project $wandb_project \
 		 --wandb_entity $wandb_entity
