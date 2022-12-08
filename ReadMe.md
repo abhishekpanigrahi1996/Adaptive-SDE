@@ -19,12 +19,12 @@ We use weights and biases to keep track of model behavior along the trajectory.
 
 ```
 python -u cifar_main.py  \
-            --data_dir $data_path  \
-            --arch=$model  \
-             --save-dir=$save_dir \
-             --weight-decay=1e-4 \
-             --loss_type='xent' \
-             --momentum=$momentum \
+              --data_dir $data_path  \
+              --arch=$model  \
+              --save-dir=$save_dir \
+              --weight-decay=1e-4 \
+              --loss_type='xent' \
+              --momentum=$momentum \
               --epochs=500 \
               --lr=$lr \
               --rho=$rho \
