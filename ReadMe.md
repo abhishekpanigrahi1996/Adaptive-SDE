@@ -15,8 +15,7 @@ We use weights and biases to keep track of model behavior along the trajectory.
 
 ## Run the code
 
-1. To train a model on CIFAR-10, run the following command (after replacing (a) $model with either resnet56 or vgg16_bn, (b) $momentum with the momentum parameter, (c) $rho with the parameter for the running average in the denominator, (d) $lr with the desired learning rate, (e) $epsilon with the epsilon parameter for adam, (f) $batch_size with the desired batch size, (g) $save_dir with the directory to save checkpoints, (h) $wandb_project with weights and biases project to add your results to, (i) $wandb_entity with weights and biases entity to add your results to, (j) $schedule_pattern with the lr scheduling pattern ('300-400-500' for rmsprop, '300-500' for adam), (k) $algo with one of rmsprop or adam, (l) $data_path with the correct path to cifar-10 files ):
-
+1. To train a model on CIFAR-10, run the following command 
 ```
 python -u cifar_main.py  \
               --data_dir $data_path  \
@@ -40,6 +39,16 @@ python -u cifar_main.py  \
               --wandb_project $wandb_project \
               --wandb_entity $wandb_entity
 ```
+~~~
+
+1. A numbered list
+    1. A nested numbered list
+    2. Which is numbered
+2. Which is numbered
+
+~~~
+
+(after replacing (a) $model with either resnet56 or vgg16_bn, (b) $momentum with the momentum parameter, (c) $rho with the parameter for the running average in the denominator, (d) $lr with the desired learning rate, (e) $epsilon with the epsilon parameter for adam, (f) $batch_size with the desired batch size, (g) $save_dir with the directory to save checkpoints, (h) $wandb_project with weights and biases project to add your results to, (i) $wandb_entity with weights and biases entity to add your results to, (j) $schedule_pattern with the lr scheduling pattern ('300-400-500' for rmsprop, '300-500' for adam), (k) $algo with one of rmsprop or adam, (l) $data_path with the correct path to cifar-10 files ):
 
 
 
