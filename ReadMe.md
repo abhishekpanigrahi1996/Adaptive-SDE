@@ -104,9 +104,43 @@ python -u cifar_main.py \
 
 
 ######
-3. To run Imagenet experiments, run the following command (after replacing (a) $data_path with the correct path to imagenet files, (b) $momentum with the momentum parameter, (c) $rho with the parameter for the running average in the denominator, (d) $lr with the desired learning rate, (e) $epsilon with the epsilon parameter for adam, (f) $batch_size with the desired batch size, (g) $wandb_project with weights and biases project to add your results to, (h) $wandb_entity with weights and biases entity to add your results to ):
+3. To run Imagenet experiments, run the following command 
+```
+python Imagenet_main.py\
+		 -b $batch_size\
+		 -a resnet50 \
+		 --optimizer adam \
+		 --momentum $momentum \
+		 --rho $rho \
+		 --lr $lr \
+		 --warmup 1 \
+		 --epsilon $epsilon \
+		 --warmup_steps 5 \
+		 --schedule_lr 1 \
+		 --schedule_pattern='50-80-90' \
+		 --gpu=0 \
+		 --sample_mode random_shuffling \
+		 --world-size 1 \
+		 --rank 0 $data_path \
+		 --workers 10 \
+		 --wandb_project $wandb_project \
+		 --wandb_entity $wandb_entity
+```		 
+~~~
+1.  momentum:  the momentum parameter of adaptive algorithms  
+2.  rho:  parameter of the running average of the second order moments for adaptive algorithms 
+3.  lr: Learning rate
+4.  epsilon: Epsilon parameter for adaptive algorithms 
+5.  batch_size: Batch size for training
+6. wandb_project: weights and biases project to store the progress
+7. wandb_entity:   Project file inside the  weights and biases project
+8. data_path: Path to Imagenet files
+~~~
 
-python Imagenet_main.py -b $batch_size -a resnet50 --optimizer adam --momentum $momentum --rho $rho --lr $lr --warmup 1 --epsilon $epsilon --warmup_steps 5 --schedule_lr 1 --schedule_pattern='50-80-90' --gpu=0 --sample_mode random_shuffling --world-size 1 --rank 0 $data_path --workers 10 --wandb_project $wandb_project --wandb_entity $wandb_entity
+
+
+
+
 
 
 
