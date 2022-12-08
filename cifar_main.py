@@ -563,9 +563,9 @@ def main():
                                     weight_decay=args.weight_decay)
     
     if args.seed is not None:
-        #random.seed(args.seed)
+        random.seed(args.seed)
         torch.manual_seed(args.seed)
-        #cudnn.deterministic = True
+        cudnn.deterministic = True
         #warnings.warn('You have chosen to seed training. '
         #              'This will turn on the CUDNN deterministic setting, '
         #              'which can slow down your training considerably! '
