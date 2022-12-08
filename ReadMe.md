@@ -44,11 +44,11 @@ python -u cifar_main.py  \
 2.  momentum:  the momentum parameter of adaptive algorithms  
 3.  rho:  parameter of the running average of the second order moments for adaptive algorithms 
 4.  lr: Learning rate
-5. schedule_pattern: Learning rate schedule pattern ('300-400-500' for rmsprop, '300-500' for adam)
-6. algo: Algorithm to run (rmsprop / adam)
+5.  schedule_pattern: Learning rate schedule pattern ('300-400-500' for rmsprop, '300-500' for adam)
+6.  algo: Algorithm to run (rmsprop / adam)
 7.  epsilon: Epsilon parameter for adaptive algorithms 
 8.  batch_size: Batch size for training
-9. save_dir: Directory to save checkpoints
+9.   save_dir: Directory to save checkpoints
 10. wandb_project: weights and biases project to store the progress
 11. wandb_entity:   Project file inside the  weights and biases project
 12. data_path: Path to Cifar-10 files
