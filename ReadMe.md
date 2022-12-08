@@ -41,7 +41,7 @@ python -u cifar_main.py  \
 ```
 ~~~
 
-1. A numbered list
+1. Specify the model to run on with $model ( resnet56 / vgg16_bn )
     1. A nested numbered list
     2. Which is numbered
 2. Which is numbered
