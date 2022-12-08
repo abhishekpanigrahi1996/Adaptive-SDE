@@ -56,11 +56,50 @@ python -u cifar_main.py  \
 
 
 
-######
-2. To run the SVAG experiments on CIFAR-10, run the following command (after replacing (a) $model with either resnet56 or vgg16_bn, (b) $momentum with the momentum parameter, (c) $rho with the parameter for the running average in the denominator, (d) $lr with the desired learning rate, (e) $epsilon with the epsilon parameter for adam, (f) $batch_size with the desired batch size, (g) $save_dir with the directory to save checkpoints, (h) $wandb_project with weights and biases project to add your results to, (i) $wandb_entity with weights and biases entity to add your results to, (j) $schedule_pattern with the lr scheduling pattern ('300-400-500' for rmsprop, '300-500' for adam), (k) $algo with one of rmsprop or adam, (l) $svag_param with the svag parameter (1, 2, 4, 8 in the paper), (m) $data_path with the correct path to cifar-10 files ):
+2. To run the SVAG experiments on CIFAR-10, run the following command 
+
+```
+python -u cifar_main.py \
+		--data_dir $data_path \
+		--arch=$model \
+		--svag_param=$svag_param \
+		--save-dir=$save_dir \
+		--weight-decay=1e-4 \
+		--loss_type='xent' \
+		--momentum=$momentem \
+		--epochs=500 \
+		--lr=$lr \
+		--rho=$rho \
+		--optimizer=$algo \
+		--batch-size=$batch_size \
+		--schedule_lr=1 \
+		--warmup=1\
+		--warmup_steps=10 \
+		--schedule_pattern=$schedule_pattern \
+		--looper=1 \
+		--epsilon=$epsilon \
+		--train_final_layer=0  \
+		--wandb_project $wandb_project \
+		--wandb_entity $wandb_entity
+```
+~~~
+1.  model: the model to run  ( resnet56 / vgg16_bn )
+2.  momentum:  the momentum parameter of adaptive algorithms  
+3.  rho:  parameter of the running average of the second order moments for adaptive algorithms 
+4.  lr: Learning rate
+5.  schedule_pattern: Learning rate schedule pattern ('300-400-500' for rmsprop, '300-500' for adam)
+6.  algo: Algorithm to run (rmsprop / adam)
+7.  epsilon: Epsilon parameter for adaptive algorithms 
+8.  batch_size: Batch size for training
+9.  save_dir: Directory to save checkpoints
+10. wandb_project: weights and biases project to store the progress
+11. wandb_entity:   Project file inside the  weights and biases project
+12. data_path: Path to Cifar-10 files
+13. svag_param: SVAG parameters (1, 2, 4, 8 in the paper)
+~~~
 
 
-python -u cifar_main.py --data_dir $data_path --arch=$model --svag_param=$svag_param  --save-dir=$save_dir  --weight-decay=1e-4 --loss_type='xent' --momentum=$momentem --epochs=500 --lr=$lr --rho=$rho --optimizer=$algo --batch-size=$batch_size --schedule_lr=1 --warmup=1 --warmup_steps=10 --schedule_pattern=$schedule_pattern --looper=1 --epsilon=$epsilon --train_final_layer=0  --wandb_project $wandb_project --wandb_entity $wandb_entity
+
 
 
 
