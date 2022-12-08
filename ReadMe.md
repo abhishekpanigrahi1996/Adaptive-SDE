@@ -48,7 +48,7 @@ python -u cifar_main.py  \
 6.  algo: Algorithm to run (rmsprop / adam)
 7.  epsilon: Epsilon parameter for adaptive algorithms 
 8.  batch_size: Batch size for training
-9.   save_dir: Directory to save checkpoints
+9.  save_dir: Directory to save checkpoints
 10. wandb_project: weights and biases project to store the progress
 11. wandb_entity:   Project file inside the  weights and biases project
 12. data_path: Path to Cifar-10 files
